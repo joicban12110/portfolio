@@ -1,0 +1,108 @@
+:root {
+    --primary-color: rgb(0, 0, 0);
+    --glass-bg-color: rgba(255, 255, 255, 0.2);
+    --glass-border-color: rgba(255, 255, 255, 0.4);
+    --glass-shadow-color: rgba(255, 255, 255, 0.2);
+    --border-radius: 10px;
+    --box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    --backdrop-filter: blur(10px);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: url(bg.avif) no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Global Stylings */
+
+h1 {
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--glass-border-color);
+    border-radius: var(--border-radius);
+    background: var(--glass-bg-color);
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Form */
+.form {
+    width: clamp(320px, 30%, 430px);
+    padding: 1.5rem;
+    background: var(--glass-bg-color);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--glass-border-color);
+    box-shadow: var(--box-shadow);
+    backdrop-filter: var(--backdrop-filter);
+    -webkit-backdrop-filter: var(--backdrop-filter);
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Button */
+.btn {
+    padding: 0.75rem;
+    display: block;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.btn:hover {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+}
+
+.btn-create-account {
+    display: inline-block;
+    padding: 0.25rem 0.75rem; 
+    font-size: 0.875rem; 
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+    border-radius: 6px; 
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-create-account:hover {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+}
+
+.mt-2 {
+    margin-top: 1rem;
+}

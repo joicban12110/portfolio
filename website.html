@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOVEN'S PROJECT - Login</title>
+
+    <!-- Favicon link -->
+    <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/website.css">
+</head>
+<body style="background-image: url(img/bg.avif); background-size: cover; background-position: center;">
+    <form id="loginForm" class="form">
+        <h1 class="text-center"> <strong>Log In</strong></h1>
+
+        <div class="form-step form-step-active">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required />
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required />
+            </div>
+            <div class="btns-group">
+                <input type="submit" value="Login" class="btn" />
+            </div>
+        </div>
+    </form>
+
+    <script>
+        // Get the form and attach a submit event listener
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get username and password values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Define the valid username-password combinations
+            const validCredentials = [
+                { username: 'Fimperial', password: '123456789' },
+                { username: 'fimperial', password: '123456789' },
+                { username: 'jovjov', password: '123456789' },
+                { username: 'icban', password: '123456789' }
+            ];
+
+            // Check if the entered credentials match any of the valid ones
+            const isValid = validCredentials.some(cred => cred.username === username && cred.password === password);
+
+            if (isValid) {
+                // Wait for 10 seconds before redirecting
+                setTimeout(function() {
+                    window.location.href = 'index.html'; // Redirect to index.html after 10 seconds
+                }, 10000); // 10000 milliseconds = 10 seconds
+            } else {
+                alert('Invalid username or password');
+            }
+        });
+    </script>
+</body>
+</html>
